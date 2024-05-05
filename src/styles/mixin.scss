@@ -1,0 +1,82 @@
+@mixin animation-button(
+	$background-color: $theme-2,
+	$color: $common-white,
+	$height: 55px,
+  $padding: 0 35px,
+  $line-height: 55px,
+	$text-align: center,
+	$font-weight: 700,
+	$font-size: 14px,
+	$text-transform: uppercase,
+	$border-radius: 60px,
+	$overflow: hidden,
+	$transition: 0.3s,
+	$position: relative,
+	$z-index: 1,
+  //Hover
+  $hoverColor: $common-white,
+  //Before
+  $before-animation: opacityFallbackOut 0.5s step-end forwards,
+  $before-backface-visibility: hidden,
+  $before-background-color: $common-black,
+  $before-clip-path: polygon(-1% 0, 0 0, -25% 100%, -1% 100%),
+  $before-height: 100%,
+  $before-left: 0,
+  $before-position: absolute,
+  $before-top: 0,
+  $before-transform: translateZ(0),
+  // $before-transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+  //   -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+  $before-width: 100%,
+  //Before Hover
+  $beforeHover-animation: opacityFallbackIn 0s step-start forwards,
+  $beforeHover-clip-path: polygon(0 0, 101% 0, 101% 101%, 0 101%),
+  $beforeHover-color: $common-white,
+) {
+	display: inline-block;
+	background-color: $background-color;
+	color: $color;
+	height: $height;
+	line-height: $line-height;
+	text-align: $text-align;
+	padding: $padding;
+	font-weight: $font-weight;
+	font-size: $font-size;
+	text-transform: $text-transform;
+	border-radius: $border-radius;
+	overflow: $overflow;
+	transition: $transition;
+	position: $position;
+	z-index: $z-index;
+
+	&:hover {
+		text-decoration: none;
+		color: $hoverColor;
+	}
+
+	&::before {
+		content: "";
+		animation: $before-animation;
+		backface-visibility: $before-backface-visibility;
+		background-color: $before-background-color;
+		clip-path: $before-clip-path;
+		height: $before-height;
+		left: $before-left;
+		position: $before-position;
+		top: $before-top;
+		transform: $before-transform;
+		transition: clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+    -webkit-clip-path 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+		width: $before-width;
+	}
+	&:hover::before {
+		animation: $beforeHover-animation;
+		clip-path: $beforeHover-clip-path;
+		color: $beforeHover-color !important;
+	}
+
+	span {
+		z-index: 1;
+		position: relative;
+	}
+}
