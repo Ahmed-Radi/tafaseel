@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 import TopNavbar from "@/components/topNavbar/TopNavbar";
 import Navbar from "@/components/navbar/Navbar";
 
-const inter = Cairo({ subsets: ["latin"] });
+const cairo = Cairo({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "karzoun",
@@ -18,8 +18,8 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
-			<body className={inter.className}>
+		<html lang="en">
+			<body className={cairo.className}>
 				<Providers>
 					<TopNavbar />
 					<Navbar />

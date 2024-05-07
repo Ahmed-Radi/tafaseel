@@ -10,7 +10,7 @@ export default function SocialMediaLink({
 	icon: IconComponent,
 }: ISocialMediaLink) {
 	return (
-		<Link className='left-side-icon' href={link}>
+		<Link className="left-side-icon" href={link}>
 			<IconComponent size={18} />
 		</Link>
 	);
