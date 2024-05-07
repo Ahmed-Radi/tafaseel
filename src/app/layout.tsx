@@ -5,7 +5,7 @@ import { Providers } from "./providers";
 import TopNavbar from "@/components/topNavbar/TopNavbar";
 import Navbar from "@/components/navbar/Navbar";
 
-const cairo = Cairo({ subsets: ["latin"] });
+const cairo = Cairo({ subsets: ["arabic"] });
 
 export const metadata: Metadata = {
 	title: "karzoun",
