@@ -40,12 +40,12 @@ const Navbar: React.FC = () => {
 									<FaBars size={20} />
 								</div>
 								<Link
-									href="#"
+									href="/login"
 									className="navbar__auth-button navbar__auth-button--try">
 									<span>تجربة الخدمة</span>
 								</Link>
 								<Link
-									href="#"
+									href="/login"
 									className="navbar__auth-button navbar__auth-button--login">
 									تسجيل الدخول
 									<AiOutlineUser />

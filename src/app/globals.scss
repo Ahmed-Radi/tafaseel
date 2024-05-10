@@ -2,7 +2,8 @@
 @import '@/styles/mixin.scss';
 @import '@/components/topNavbar/topNavbar.scss';
 @import '@/components/navbar/navbar.scss';
-@import '@/styles/home.scss';
+@import './\(home\)/home.scss';
+@import './\(auth\)/login/login.scss';
 
 :root {
   font-family: var(--ff-body);
@@ -28,4 +29,7 @@
 }
 body {
   // font-family: $ff-body !important;
+}
+.error {
+  color: red;
 }
