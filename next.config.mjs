@@ -14,6 +14,27 @@ const nextConfig = {
       },
     },
   },
+  async rewrites() {
+    // The rewrites function is used when you want to make the file name different from the path
+    return [
+      {
+        source: '/user/sent-text-message', // full path
+        destination: '/user/sentTextMessage', // full file name
+      },
+      {
+        source: '/user/schedule-message',
+        destination: '/user/scheduleMessage',
+      },
+      {
+        source: '/user/auth-key',
+        destination: '/user/authKey',
+      },
+      {
+        source: '/not-found',
+        destination: '/notFound',
+      },
+    ];
+  },
 };
 
 export default nextConfig;
