@@ -1,15 +1,23 @@
-"use client";
-
-import Sidebar from '@/components/sidebar/sidebar'
+'use client';
+import Sidebar from '@/components/sidebar/sidebar';
 import { SidebarContext } from '@/store/sidebarContext/sidebarContext';
-import { Container } from '@chakra-ui/react'
-import React, { useContext } from 'react'
-import { useMediaQuery } from "@uidotdev/usehooks";
+import { Container } from '@chakra-ui/react';
+import { ReactNode, useContext, useEffect, useState } from 'react';
+import { useMediaQuery } from 'usehooks-ts';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
-function ContentComponent({ children }: { children: React.ReactNode }) {
+function ContentComponent({ children }: { children: ReactNode }) {
+  const [isClient, setIsClient] = useState(false);
+
   const { isOpen, toggleSidebar } = useContext(SidebarContext);
-  const isSmallDevice: boolean = useMediaQuery("only screen and (max-width : 1199px)");
+  const isSmallDevice: boolean = useMediaQuery('(max-width : 1199px)');
+
+  // this temporary solution until using 'suppressHydrationWarning={true}'
+  useEffect(() => {
+    setIsClient(true)
+  }, []);
+
+  if (isClient === false) return "Loading...";
 
   return (
     <div className={`layout-container${isOpen ? "" : " close"}`}>
