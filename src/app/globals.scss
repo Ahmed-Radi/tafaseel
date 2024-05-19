@@ -2,8 +2,12 @@
 @import '@/styles/mixin.scss';
 @import '@/components/topNavbar/topNavbar.scss';
 @import '@/components/navbar/navbar.scss';
-@import './\(home\)/home.scss';
 @import './\(auth\)/login/login.scss';
+
+@import './\(dashboard\)/dashboardLayout.scss';
+@import '@/components/sidebar/sidebar.scss';
+
+@import './\(home\)/home.scss';
 
 :root {
   font-family: var(--ff-body);
