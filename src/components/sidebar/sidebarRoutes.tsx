@@ -5,7 +5,7 @@ import { PiAddressBook, PiCalendarDotsDuotone } from "react-icons/pi";
 import { IoIosSwitch, IoIosSettings } from "react-icons/io";
 import { LiaRocketSolid } from "react-icons/lia";
 import { TfiKey, TfiPowerOff } from "react-icons/tfi";
-import { ISidebarData } from "@/types/sidebar";
+import { ISidebarData } from "@/types/dashboard/sidebar";
 
 const data: ISidebarData[] = [
   {
