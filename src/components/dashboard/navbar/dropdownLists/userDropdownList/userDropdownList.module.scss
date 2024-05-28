@@ -1,0 +1,30 @@
+@import "@/styles/variables.scss";
+
+.menu_container {
+  text-align: right;
+
+  .szh_menu__header {
+    font-size: 13px;
+    font-weight: 600;
+    color: #32325d;
+  }
+
+  .szh_menu__item {
+    font-size: 14px;
+    font-weight: 400;
+
+    justify-content: flex-end;
+    gap: 10px;
+
+    &:hover {
+      color: #16181b;
+      text-decoration: none;
+      background-color: #f6f9fc;
+    }
+    &:active {
+      color: $common-white;
+      text-decoration: none;
+      background-color: $theme-2;
+    }
+  }
+}
