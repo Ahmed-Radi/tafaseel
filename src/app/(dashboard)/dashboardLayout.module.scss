@@ -1,0 +1,33 @@
+.layout_container {
+	// display: flex;
+	// justify-content: space-between;
+	height: 100vh;
+
+	.chakra_container {
+    width: auto;
+    margin: 0;
+		margin-right: 250px;
+    padding: 0;
+	}
+	// if close sidebar
+	&.close {
+		.chakra_container {
+      height: 100vh;
+      width: auto;
+			margin: 0;
+			margin-right: 62px;
+		}
+	}
+}
+@media only screen and (max-width: 1199px) {
+	.layout_container {
+		&.close {
+			.chakra_container {
+				margin-right: 0;
+			}
+		}
+    .chakra_container {
+      margin-right: 0;
+    }
+	}
+}
