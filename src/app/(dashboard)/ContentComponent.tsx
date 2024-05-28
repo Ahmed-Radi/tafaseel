@@ -3,19 +3,15 @@ import Sidebar from '@/components/sidebar/sidebar';
 import { SidebarContext } from '@/store/sidebarContext/sidebarContext';
 import { Container } from '@chakra-ui/react';
 import { ReactNode, useContext, useEffect, useState } from 'react';
-import { useMediaQuery } from 'usehooks-ts';
+import { useMediaQuery, useIsClient } from 'usehooks-ts';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
 function ContentComponent({ children }: { children: ReactNode }) {
-  const [isClient, setIsClient] = useState(false);
-
-  const { isOpen, toggleSidebar } = useContext(SidebarContext);
-  const isSmallDevice: boolean = useMediaQuery('(max-width : 1199px)');
 
   // this temporary solution until using 'suppressHydrationWarning={true}'
-  useEffect(() => {
-    setIsClient(true)
-  }, []);
+  const isClient = useIsClient();
+  const { isOpen, toggleSidebar } = useContext(SidebarContext);
+  const isSmallDevice: boolean = useMediaQuery('(max-width : 1199px)');
 
   if (isClient === false) return "Loading...";
 
