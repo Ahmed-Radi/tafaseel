@@ -8,7 +8,7 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { SidebarContext } from "@/store/sidebarContext/sidebarContext";
 import data from "./sidebarRoutes";
-import { ISidebar, ISidebarData, ISidebarItem } from "@/types/sidebar";
+import { ISidebar, ISidebarData, ISidebarItem } from "@/types/dashboard/sidebar";
 import { usePathname } from "next/navigation";
 
 function Sidebar({ isSmallDevice }: ISidebar) {
