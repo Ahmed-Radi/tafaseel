@@ -4,8 +4,9 @@
 @import '@/components/navbar/navbar.scss';
 @import './\(auth\)/login/login.scss';
 
-@import './\(dashboard\)/dashboardLayout.scss';
+// @import './\(dashboard\)/dashboardLayout.module.scss';
 @import '@/components/sidebar/sidebar.scss';
+// @import '@/components/dashboard/navbar/dashboardNavbar.module.scss';
 
 @import './\(home\)/home.scss';
 
@@ -32,7 +33,7 @@
   box-sizing: border-box;
 }
 body {
-  // font-family: $ff-body !important;
+  font-family: $ff-body !important;
 }
 .error {
   color: red;

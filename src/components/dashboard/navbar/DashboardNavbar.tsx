@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Container, Flex } from "@chakra-ui/react";
-import styles from "./DashboardNavbar.module.scss";
+import styles from "./dashboardNavbar.module.scss";
 import { IDashboardNavbar } from "@/types/dashboard/Navbar";
 import { useContext } from "react";
 import { SidebarContext } from "@/store/sidebarContext/sidebarContext";
