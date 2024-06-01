@@ -1,0 +1,24 @@
+.popup_container {
+  opacity: 1;
+	-webkit-animation: show-navbar-dropdown 0.25s ease forwards;
+	animation: show-navbar-dropdown 0.25s ease forwards;
+}
+
+@keyframes show-navbar-dropdown {
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(10px) perspective(200px) rotateX(-2deg);
+		transform: translateY(10px) perspective(200px) rotateX(-2deg);
+		-webkit-transition: visibility 0.25s, opacity 0.25s,
+			-webkit-transform 0.25s;
+		transition: visibility 0.25s, opacity 0.25s, -webkit-transform 0.25s;
+		transition: visibility 0.25s, opacity 0.25s, transform 0.25s;
+		transition: visibility 0.25s, opacity 0.25s, transform 0.25s,
+			-webkit-transform 0.25s;
+	}
+	100% {
+		-webkit-transform: translate(0);
+		transform: translate(0);
+		opacity: 1;
+	}
+}
