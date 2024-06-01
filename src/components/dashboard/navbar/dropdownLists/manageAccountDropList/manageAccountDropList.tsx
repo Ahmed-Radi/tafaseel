@@ -1,7 +1,7 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import ManageAccount from "./manageAccount/manageAccount";
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Flex, useOutsideClick } from "@chakra-ui/react";
 import PageLink from "./pageLink/PageLink";
 import PageLinkItems from "./pageLink/pageLinkItems/pageLinkItems";
 import { IPageLinkArray } from "@/types/dashboard/manageAccountDropList";
@@ -12,33 +12,15 @@ const ManageAccountDropList = () => {
 	const { popup_container } = styles;
 	const [isOpen, setOpen] = useState<boolean>(false);
 	const containerRef = useRef<HTMLDivElement>(null);
-	const onClickHandler = () => {
+	const onClickHandler = useCallback(() => {
 		setOpen(prev => !prev);
-	};
+	} ,[]);
 
-  useEffect(() => {
-		// Define handleClickOutside, a function that will be triggered on a mousedown event.
-		// It checks if the click occurred outside the referenced component.
-		const handleClickOutside = (event: MouseEvent) => {
-			// Check if containerRef.current is defined (i.e., the component is mounted)
-			// and if the click target is not within containerRef.current (i.e., outside the component).
-      if (containerRef.current && event.target instanceof Node && !containerRef.current.contains(event.target)) {
-				// If the click is outside, set the isOpen state to false, closing or hiding the component.
-				setOpen(false);
-			}
-		};
-
-		// Add the handleClickOutside function as an event listener for mousedown events on the document.
-		// This captures all mousedown events that bubble up to the document level.
-		document.addEventListener("mousedown", handleClickOutside as EventListener);
-
-		// Return a cleanup function from useEffect.
-		// This cleanup function is called when the component unmounts,
-		// ensuring that we properly remove the event listener to prevent memory leaks.
-		return () => {
-			document.removeEventListener("mousedown", handleClickOutside as EventListener);
-		};
-	}, []);
+  // It checks if the click occurred outside the referenced component.
+  useOutsideClick({
+    ref: containerRef,
+    handler: () => setOpen(false),
+  });
 
 	return (
 		<Box as={"div"} position={"relative"} ref={containerRef}>
