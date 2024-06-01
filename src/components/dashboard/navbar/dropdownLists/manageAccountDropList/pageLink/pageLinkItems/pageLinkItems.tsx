@@ -1,6 +1,7 @@
 import { IPageLinkItems } from "@/types/dashboard/manageAccountDropList";
 import { Box, Flex } from "@chakra-ui/react";
 import Image from "next/image";
+import { memo } from "react";
 
 const PageLinkItems = ({ label, image }: IPageLinkItems) => {
 	return (
@@ -59,4 +60,4 @@ const PageLinkItems = ({ label, image }: IPageLinkItems) => {
 	);
 };
 
-export default PageLinkItems;
+export default memo(PageLinkItems);

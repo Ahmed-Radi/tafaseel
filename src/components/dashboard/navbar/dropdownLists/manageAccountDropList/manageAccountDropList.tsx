@@ -1,5 +1,5 @@
 "use client";
-import React, { useCallback, useRef, useState } from "react";
+import React, { memo, useCallback, useRef, useState } from "react";
 import ManageAccount from "./manageAccount/manageAccount";
 import { Box, Flex, useOutsideClick } from "@chakra-ui/react";
 import PageLink from "./pageLink/PageLink";
@@ -66,4 +66,4 @@ const ManageAccountDropList = () => {
 	);
 };
 
-export default ManageAccountDropList;
+export default memo(ManageAccountDropList);

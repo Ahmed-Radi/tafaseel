@@ -1,6 +1,7 @@
 import { IPageLink } from "@/types/dashboard/manageAccountDropList";
 import { Flex } from "@chakra-ui/react";
 import Link from "next/link";
+import { memo } from "react";
 
 const PageLink = ({ href, children }: IPageLink) => {
 	return (
@@ -18,4 +19,4 @@ const PageLink = ({ href, children }: IPageLink) => {
 	);
 };
 
-export default PageLink;
+export default memo(PageLink);
