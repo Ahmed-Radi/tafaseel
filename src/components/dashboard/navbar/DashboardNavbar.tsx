@@ -6,10 +6,10 @@ import { IDashboardNavbar } from "@/types/dashboard/Navbar";
 import { useContext } from "react";
 import { SidebarContext } from "@/store/sidebarContext/sidebarContext";
 import { RxHamburgerMenu } from "react-icons/rx";
-import { LiaObjectUngroupSolid } from "react-icons/lia";
 import { IoMdNotifications } from "react-icons/io";
 import UserDropdownList from "./dropdownLists/userDropdownList/userDropdownList";
 import AssociatedAccountsDropdownList from "./dropdownLists/associatedAccountsDropdownList/associatedAccountsDropdownList";
+import ManageAccountDropList from "./dropdownLists/manageAccountDropList/manageAccountDropList";
 
 const DashboardNavbar = ({ isSmallDevice }: IDashboardNavbar) => {
 	const {
@@ -45,9 +45,7 @@ const DashboardNavbar = ({ isSmallDevice }: IDashboardNavbar) => {
 							alignItems={"center"}
 							className={icon_container}
 							cursor={"pointer"}>
-							<Box as={"div"} cursor={"pointer"}>
-								<LiaObjectUngroupSolid />
-							</Box>
+							<ManageAccountDropList />
 							<AssociatedAccountsDropdownList />
 							<Box as={"div"} cursor={"pointer"}>
 								<IoMdNotifications />
