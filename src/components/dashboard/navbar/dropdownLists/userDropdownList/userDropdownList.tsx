@@ -13,6 +13,7 @@ import { IoPerson, IoSettingsSharp } from "react-icons/io5";
 import { FaCode } from "react-icons/fa";
 import { BiRun } from "react-icons/bi";
 import UserProfile from "./userProfile/userProfile";
+import { memo } from "react";
 
 type Props = {};
 
@@ -60,4 +61,4 @@ function UserDropdownList({}: Props) {
 	);
 }
 
-export default UserDropdownList;
+export default memo(UserDropdownList);

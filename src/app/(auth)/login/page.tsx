@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image";
 import loginImage from "@/assets/images/login-image.png";
-import { Box, Button, Center, Flex, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
+import { Box, Button, Center, Checkbox, Flex, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
 import { Tajawal } from "next/font/google";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -25,7 +25,7 @@ function LoginPage({ }: ILoginPage) {
       resolver: yupResolver(signInSchema),
     }
   );
-  const onSubmit = (data: ILoginPageInputs) => console.log(data);
+  const onSubmit: SubmitHandler<ILoginPageInputs> = (data: ILoginPageInputs) => console.log(data);
 
   //Handlers
   const handleClick = () => setShow((prev: boolean): boolean => !prev)
@@ -67,8 +67,9 @@ function LoginPage({ }: ILoginPage) {
               <Flex as={"div"} justifyContent={"space-between"} mb={"40px"} w={"100%"}>
                 <Box as="a" href="#" className="forget-password">نسيت كلمة المرور؟</Box>
                 <Flex as={"div"} gap={1}>
-                  <Box as="label" htmlFor="checkbox">ابق مسجل دخول لفترة اطول</Box>
-                  <input type="checkbox" id="checkbox" />
+                  <Checkbox>
+                    <Box>ابق مسجل دخول لفترة اطول</Box>
+                  </Checkbox>
                 </Flex>
               </Flex>
 

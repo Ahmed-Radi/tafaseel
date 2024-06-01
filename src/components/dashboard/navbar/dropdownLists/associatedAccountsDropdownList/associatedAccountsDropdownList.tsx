@@ -3,13 +3,13 @@ import {
 	MenuItem,
 	MenuButton,
 	MenuDivider,
-	MenuHeader,
 } from "@szhsin/react-menu";
 import "@szhsin/react-menu/dist/index.css";
 import "@szhsin/react-menu/dist/transitions/slide.css";
 import { Box } from "@chakra-ui/react";
 import CurrentAccounts from "./currentAccounts/currentAccounts";
 import styles from "./associatedAccountsDropdownList.module.scss";
+import { memo } from "react";
 
 type Props = {};
 
@@ -40,4 +40,4 @@ function AssociatedAccountsDropdownList({}: Props) {
 	);
 }
 
-export default AssociatedAccountsDropdownList;
+export default memo(AssociatedAccountsDropdownList);

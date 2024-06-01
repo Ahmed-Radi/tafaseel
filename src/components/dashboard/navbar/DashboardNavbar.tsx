@@ -3,7 +3,7 @@
 import { Box, Container, Flex } from "@chakra-ui/react";
 import styles from "./dashboardNavbar.module.scss";
 import { IDashboardNavbar } from "@/types/dashboard/Navbar";
-import { useContext } from "react";
+import { memo, useContext } from "react";
 import { SidebarContext } from "@/store/sidebarContext/sidebarContext";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { IoMdNotifications } from "react-icons/io";
@@ -69,4 +69,4 @@ const DashboardNavbar = ({ isSmallDevice }: IDashboardNavbar) => {
 	);
 };
 
-export default DashboardNavbar;
+export default memo(DashboardNavbar);
