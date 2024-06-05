@@ -7,19 +7,15 @@ const __dirname = dirname(__filename);
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack: {
-    resolve: {
-      alias: {
-        "@": path.resolve(__dirname, "./src"),
-      },
-    },
+  webpack: (config, options) => {
+    config.resolve.alias["@"] = path.resolve(__dirname, "./src");
+    return config; // Always return the modified config
   },
   async rewrites() {
-    // The rewrites function is used when you want to make the file name different from the path
     return [
       {
-        source: '/user/sent-text-message', // full path
-        destination: '/user/sentTextMessage', // full file name
+        source: '/user/sent-text-message',
+        destination: '/user/sentTextMessage',
       },
       {
         source: '/user/schedule-message',
