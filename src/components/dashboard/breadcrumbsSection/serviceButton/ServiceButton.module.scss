@@ -1,0 +1,5 @@
+@import "@/styles/mixin.scss";
+
+.service_link {
+  @include main-button();
+}

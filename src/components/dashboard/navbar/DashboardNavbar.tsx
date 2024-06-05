@@ -27,7 +27,10 @@ const DashboardNavbar = ({ isSmallDevice }: IDashboardNavbar) => {
 			<Box as={"nav"} py={"16px"} className={nav}>
 				<Container
 					maxW={"container"}
-					px={"39px"}
+					px={{
+            base: "15px",
+            md: "39px"
+          }}
 					className={chakra_container}>
 					<Flex
 						as={"div"}
