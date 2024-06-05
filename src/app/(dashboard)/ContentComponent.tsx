@@ -6,6 +6,7 @@ import { ReactNode, useContext } from "react";
 import { useMediaQuery, useIsClient } from "usehooks-ts";
 import DashboardNavbar from "@/components/dashboard/navbar/DashboardNavbar";
 import styles from "./dashboardLayout.module.scss";
+import BreadcrumbsSection from "@/components/dashboard/breadcrumbsSection/breadcrumbsSection";
 
 function ContentComponent({ children }: { children: ReactNode }) {
 	const { layout_container, chakra_container, layout_content, close } =
@@ -36,6 +37,7 @@ function ContentComponent({ children }: { children: ReactNode }) {
 			)}
 			<Container maxW={"container"} className={chakra_container}>
 				<DashboardNavbar isSmallDevice={isSmallDevice} />
+        <BreadcrumbsSection />
 				<div className={layout_content}>{children}</div>
 			</Container>
 			<Sidebar isSmallDevice={isSmallDevice} />

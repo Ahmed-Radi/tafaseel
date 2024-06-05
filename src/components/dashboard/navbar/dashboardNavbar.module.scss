@@ -3,7 +3,7 @@
 
   .chakra_container {
     margin: 0;
-    padding: 0 39px;
+    // padding: 0 39px;
     color: #00000080;
 
     .nav_container {
@@ -15,6 +15,22 @@
           padding: 4px 16px;
         }
         .sidebar_toggle {} // if I need it else remove it
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .nav {
+    .chakra_container {
+      .nav_container {
+        .icon_container {
+          > div {
+            &:last-child {
+              padding: 4px 0 4px 16px;
+            }
+          }
+        }
       }
     }
   }
