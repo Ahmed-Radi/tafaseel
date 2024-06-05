@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./serviceButton.module.scss";
+import styles from "./ServiceButton.module.scss";
 import { Plus } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
 import { memo, ReactNode } from "react";
