@@ -1,4 +1,4 @@
-@import "@/styles/variables.scss";
+@import "@/styles/mixins.scss";
 
 .service_link {
   @include main-button();
