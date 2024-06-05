@@ -1,0 +1,8 @@
+@import "@/styles/variables.scss";
+
+.chakra_breadcrumb {
+  ol {
+    color: $theme-2;
+    flex-direction: row-reverse;
+  }
+}
