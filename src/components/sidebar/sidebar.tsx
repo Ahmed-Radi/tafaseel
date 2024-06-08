@@ -40,7 +40,7 @@ function Sidebar({ isSmallDevice }: ISidebar) {
         {data.map(({ title, line, items }: ISidebarData, index) => {
           return <React.Fragment key={index}>
             {<hr className={`line${line ? "" : " no-line"}`} />}
-            {title && <Box as="h6" mb={"8px"} w={"100%"} textAlign={"right"} className={`${(isOpen || onHover) ? "sidebar-title" : "sidebar-title close"}`}>{title}</Box>}
+            {title && <Box as="h6" mb={"8px"} w={"100%"} textAlign={"right"} fontWeight={600} className={`${(isOpen || onHover) ? "sidebar-title" : "sidebar-title close"}`}>{title}</Box>}
 
             <Box as={"div"} w={"100%"}>
               <Flex as={"ul"} className="list-items" w={"100%"} direction={"column"}>
