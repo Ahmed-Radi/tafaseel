@@ -132,10 +132,10 @@ function CreatePage() {
 									</Select>
 								)}
 							/>
+              <FormErrorMessage flexDirection={"row-reverse"}>
+                {errors.accountType && errors.accountType.message}
+              </FormErrorMessage>
 						</Flex>
-						<FormErrorMessage flexDirection={"row-reverse"}>
-							{errors.accountType && errors.accountType.message}
-						</FormErrorMessage>
 					</FormControl>
 					<Button colorScheme='teal' size='md' type='submit'>
 						الخطوة التالية
