@@ -27,6 +27,9 @@ function CreatePage() {
 		formState: { errors },
 	} = useForm<IForm>({
 		resolver: yupResolver(createSchema),
+    defaultValues: {
+      accountType: 'whatsapp qr'
+    }
 	});
 
 	const onSubmit = (data: IForm) => {
@@ -122,9 +125,7 @@ function CreatePage() {
 								name='accountType'
 								control={control}
 								render={({ field }) => (
-									<Select
-										{...field}
-										defaultValue='whatsapp qr'>
+									<Select {...field}>
 										<option value='whatsapp qr'>
 											واتساب QR
 										</option>
