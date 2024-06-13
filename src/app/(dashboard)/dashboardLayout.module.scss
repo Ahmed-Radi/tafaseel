@@ -1,33 +1,52 @@
 .layout_container {
-	// display: flex;
-	// justify-content: space-between;
-	height: 100vh;
+  // display: flex;
+  // justify-content: space-between;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 10%, #dcf7ffb3 74%, rgb(238 227 241 / 30%) 100%);
+  height: 100vh;
 
-	.chakra_container {
+  .chakra_container {
     width: auto;
     margin: 0;
-		margin-right: 250px;
+    margin-right: 250px;
     padding: 0;
-	}
-	// if close sidebar
-	&.close {
-		.chakra_container {
+
+    .container_layout_content {
+      padding: 0 39px;
+
+      .layout_content {
+        padding: 0 15px;
+        font-family: 'Cairo', sans-serif;
+      }
+    }
+  }
+
+  // if close sidebar
+  &.close {
+    .chakra_container {
       height: 100vh;
       width: auto;
-			margin: 0;
-			margin-right: 62px;
-		}
-	}
+      margin: 0;
+      margin-right: 62px;
+    }
+  }
 }
+
 @media only screen and (max-width: 1199px) {
-	.layout_container {
-		&.close {
-			.chakra_container {
-				margin-right: 0;
-			}
-		}
+  .layout_container {
+    &.close {
+      .chakra_container {
+        margin-right: 0;
+      }
+    }
+
     .chakra_container {
       margin-right: 0;
     }
-	}
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .container_layout_content {
+    padding: 0 15px !important;
+  }
 }
