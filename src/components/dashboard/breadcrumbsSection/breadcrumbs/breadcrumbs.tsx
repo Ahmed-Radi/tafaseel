@@ -8,7 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { usePathname } from "next/navigation";
 import { IoMdHome } from "react-icons/io";
-import style from './breadcrumbs.module.scss';
+import style from "./breadcrumbs.module.scss";
 
 interface IBreadcrumbItem {
 	href: string;
@@ -16,7 +16,7 @@ interface IBreadcrumbItem {
 }
 
 function Breadcrumbs() {
-  const { chakra_breadcrumb } = style;
+	const { chakra_breadcrumb } = style;
 	const pathname: string = usePathname();
 	const pathSegments: string[] = useMemo(
 		() => pathname.split("/").filter((segment: string) => segment),
@@ -50,11 +50,19 @@ function Breadcrumbs() {
 	);
 
 	return (
-		<Box as={"div"} display={{
-      base: "none",
-      sm: "block"
-    }}>
-			<Breadcrumb separator={"-"} className={chakra_breadcrumb}>{breadcrumbItems}</Breadcrumb>
+		<Box
+			as={"div"}
+			display={{
+				base: "none",
+				md: "flex",
+			}}
+			justifyContent={{
+				base: "flex-end",
+			}}
+			width={"auto"}>
+			<Breadcrumb separator={"-"} className={chakra_breadcrumb}>
+				{breadcrumbItems}
+			</Breadcrumb>
 		</Box>
 	);
 }

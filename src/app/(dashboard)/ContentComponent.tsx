@@ -9,7 +9,7 @@ import styles from "./dashboardLayout.module.scss";
 import BreadcrumbsSection from "@/components/dashboard/breadcrumbsSection/breadcrumbsSection";
 
 function ContentComponent({ children }: { children: ReactNode }) {
-	const { layout_container, chakra_container, layout_content, close } =
+	const { layout_container, chakra_container, container_layout_content, layout_content, close } =
 		styles;
 
 	// this temporary solution until using 'suppressHydrationWarning={true}'
@@ -38,7 +38,9 @@ function ContentComponent({ children }: { children: ReactNode }) {
 			<Container maxW={"container"} className={chakra_container}>
 				<DashboardNavbar isSmallDevice={isSmallDevice} />
         <BreadcrumbsSection />
-				<div className={layout_content}>{children}</div>
+        <Container maxW={"container"} className={container_layout_content}>
+          <section className={layout_content}>{children}</section>
+        </Container>
 			</Container>
 			<Sidebar isSmallDevice={isSmallDevice} />
 		</div>

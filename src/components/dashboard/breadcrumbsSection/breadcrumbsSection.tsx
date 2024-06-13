@@ -15,7 +15,6 @@ const BreadcrumbsSection = (props: Props) => {
 					md: "39px",
 				}}>
 				<Flex
-					alignItems={"center"}
 					justifyContent={{
 						base: "flex-start",
 						md: "space-between",
@@ -26,6 +25,16 @@ const BreadcrumbsSection = (props: Props) => {
 					}}>
 					<Flex
 						as={"div"}
+            alignItems={{
+              base: "flex-start",
+              // sm: "center",
+              md: "center",
+            }}
+            flexDirection={{
+              base: "row",
+              sm: "column",
+              md: "row",
+            }}
 						justifyContent={{
 							base: "row",
 							md: "center",

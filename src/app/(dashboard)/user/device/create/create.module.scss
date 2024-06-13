@@ -1,0 +1,25 @@
+.content_container {
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, .05);
+  border-radius: .375rem;
+  box-shadow: 0 0 2rem 0 rgba(136, 152, 170, .15);
+
+  .content {
+    & * {
+      text-align: right;
+    }
+    form {
+      padding-top: 24px;
+      label {
+        font-size: 14px;
+        line-height: 30px;
+        color: #57584e;
+      }
+      // .input_container {
+      //   > * {
+      //     width: 100%;
+      //   }
+      // }
+    }
+  }
+}
